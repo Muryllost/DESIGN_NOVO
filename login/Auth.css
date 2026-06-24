@@ -1,0 +1,146 @@
+/* ── Página de autenticação ───────────────────────────────────────────────── */
+
+body { margin: 0; padding: 0; background: #100a05; }
+
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px 16px;
+  background: radial-gradient(ellipse at top, #1e1205 0%, #0d0805 100%);
+  font-family: sans-serif;
+}
+
+/* ── Card central ─────────────────────────────────────────────────────────── */
+
+.auth-card {
+  width: 100%;
+  max-width: 360px;
+  background: #160e06;
+  border: 1px solid #2e200a;
+  border-radius: 20px;
+  padding: 36px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Logo ─────────────────────────────────────────────────────────────────── */
+
+.auth-logo {
+  width: 56px; height: 56px;
+  background: #ffca28;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.auth-logo .material-symbols-outlined { font-size: 30px; color: #3e2723; }
+
+.auth-title {
+  font-size: 20px; font-weight: bold;
+  color: #fff; margin: 0 0 4px; text-align: center;
+}
+.auth-subtitle {
+  font-size: 13px; color: #8a7060;
+  margin: 0 0 28px; text-align: center;
+}
+
+/* ── Inputs ───────────────────────────────────────────────────────────────── */
+
+.auth-field { width: 100%; margin-bottom: 14px; }
+.auth-field label {
+  display: block; font-size: 12px; font-weight: bold;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: #8a7060; margin-bottom: 7px;
+}
+.auth-field input {
+  width: 100%; padding: 12px 14px;
+  background: #0e0804; border: 1px solid #2e200a;
+  border-radius: 10px; color: #fff;
+  font-size: 15px; outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.auth-field input:focus { border-color: #ffca28; }
+.auth-field input::placeholder { color: #4a3020; }
+
+/* ── PIN boxes ────────────────────────────────────────────────────────────── */
+
+.pin-label {
+  font-size: 12px; font-weight: bold;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: #8a7060; margin-bottom: 10px;
+  width: 100%; text-align: left;
+}
+
+.pin-wrapper {
+  display: flex; gap: 10px;
+  justify-content: center;
+  cursor: text; position: relative;
+  margin-bottom: 6px;
+}
+
+.pin-hidden {
+  position: absolute; opacity: 0;
+  width: 0; height: 0; pointer-events: none;
+}
+
+.pin-box {
+  width: 60px; height: 64px;
+  background: #0e0804;
+  border: 1.5px solid #2e200a;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; color: #ffca28;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.pin-box--filled {
+  background: #1e1208;
+  border-color: #ffca28;
+}
+.pin-box--active {
+  border-color: #ffca2888;
+  box-shadow: 0 0 0 3px #ffca2818;
+}
+
+.pin-match {
+  font-size: 12px; margin: 6px 0 0;
+  text-align: center; width: 100%;
+}
+.pin-match--ok  { color: #00ffcc; }
+.pin-match--err { color: #ff4c4c; }
+
+/* ── Botões ───────────────────────────────────────────────────────────────── */
+
+.auth-btn {
+  width: 100%; padding: 13px;
+  background: #ffca28; color: #3e2723;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: bold;
+  cursor: pointer; margin-top: 20px;
+  transition: background 0.2s, opacity 0.2s;
+}
+.auth-btn:hover:not(:disabled) { background: #ffb300; }
+.auth-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.auth-btn-sec {
+  width: 100%; padding: 12px;
+  background: transparent; color: #8a7060;
+  border: 1px solid #2e200a; border-radius: 10px;
+  font-size: 14px; font-weight: bold;
+  cursor: pointer; margin-top: 10px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.auth-btn-sec:hover { border-color: #ffca2844; color: #ffca28; }
+
+/* ── Erro ─────────────────────────────────────────────────────────────────── */
+
+.auth-erro {
+  width: 100%; padding: 10px 12px;
+  background: #2e0f0f; border: 1px solid #ff4c4c44;
+  border-radius: 8px; color: #ff6b6b;
+  font-size: 12px; text-align: center;
+  margin-top: 12px;
+}

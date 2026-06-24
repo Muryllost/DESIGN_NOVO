@@ -1,0 +1,154 @@
+/* ═══════════════════════════════════════════════════════════════════
+   ScanStock — Design Tokens
+   Importar em main.tsx: import './styles/global.css'
+   Uso:  background: var(--bg-page);
+         color: var(--accent);
+═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Fundos ── */
+  --bg-page:        #121212;   /* fundo geral de todas as páginas   */
+  --bg-surface:     #1f1f1f;   /* cards, header, dialog, inputs     */
+  --bg-input:       #222222;   /* fundo específico de inputs        */
+  --bg-hover:       #2a2a2a;   /* hover em itens de lista           */
+
+  /* ── Bordas ── */
+  --border-default: #333333;   /* bordas subtis                     */
+  --border-muted:   #444444;   /* bordas um pouco mais visíveis     */
+
+  /* ── Texto ── */
+  --text-primary:   #ffffff;   /* títulos, valores principais       */
+  --text-secondary: #d7ccc8;   /* subtítulos, labels                */
+  --text-muted:     #aaaaaa;   /* metadados, datas, operador        */
+  --text-disabled:  #555555;   /* hints, placeholders               */
+
+  /* ── Acentos principais ── */
+  --accent:         #ffca28;   /* amarelo — cor principal do projeto */
+  --accent-dark:    #ffb300;   /* hover do botão primário           */
+  --accent-bg:      #3e2723;   /* fundo das páginas de auth         */
+  --accent-border:  #5d4037;   /* bordas nos inputs de auth         */
+  --accent-input:   #27140f;   /* fundo dos inputs de auth          */
+
+  /* ── Estados de movimento ── */
+  --entrada:        #00ffcc;   /* ENTRADA — teal                    */
+  --entrada-bg:     #1a2e1a;   /* fundo badge/campo de entrada      */
+  --entrada-border: #00ffcc44; /* borda subtil de entrada           */
+
+  --saida:          #ff4c4c;   /* SAÍDA — vermelho                  */
+  --saida-bg:       #2e1a1a;   /* fundo badge/campo de saída        */
+  --saida-border:   #ff4c4c44; /* borda subtil de saída             */
+
+  /* ── Feedback ── */
+  --warning:        #ffca28;   /* aviso (mesmo que accent)          */
+  --warning-bg:     #2e2010;   /* fundo de aviso                    */
+  --warning-border: #ffca2844;
+
+  --info:           #aaaaaa;   /* informação neutra                 */
+  --info-bg:        #2a2a2a;   /* fundo de info                     */
+
+  /* ── Botões ── */
+  --btn-primary-bg:    #ffca28;
+  --btn-primary-color: #3e2723;
+  --btn-danger-bg:     #ff4c4c;
+  --btn-danger-color:  #ffffff;
+
+  /* ── Estrutura ── */
+  --header-border:  2px solid #ffca28;
+  --radius-sm:      6px;
+  --radius-md:      8px;
+  --radius-lg:      12px;
+
+  /* ── Tipografia ── */
+  --font-sans: sans-serif;
+}
+
+/* ── Reset mínimo ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+/* ── Utilitários reutilizáveis em todas as páginas ─────────────── */
+
+/* Header */
+.ss-header {
+  background: var(--bg-surface);
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: var(--header-border);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.ss-header a,
+.ss-header button {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+.ss-header a:hover        { color: var(--text-primary); }
+.ss-header a.active       { color: var(--accent); border-bottom: 2px solid var(--accent); }
+.ss-header button.logout  { color: var(--saida); }
+.ss-header button.logout:hover { color: #ff6b6b; }
+
+/* Botões */
+.ss-btn {
+  padding: 12px 25px;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+.ss-btn:hover:not(:disabled)     { background: var(--accent-dark); }
+.ss-btn:disabled                  { opacity: 0.5; cursor: not-allowed; }
+.ss-btn.danger                    { background: var(--btn-danger-bg); color: var(--btn-danger-color); }
+.ss-btn.danger:hover:not(:disabled) { background: #ff6b6b; }
+.ss-btn.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.ss-btn.secondary:hover:not(:disabled) { background: rgba(255,202,40,0.1); }
+
+/* Input wrapper */
+.ss-input-wrapper { margin: 12px 0; text-align: left; }
+.ss-input-wrapper label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+.ss-input-wrapper input,
+.ss-input-wrapper select {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-muted);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.ss-input-wrapper input:focus,
+.ss-input-wrapper select:focus { border-color: var(--accent); }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ScanStock</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="/login/auth.css">
+</head>
+<body style="margin: 0; padding: 0; background: #100a05;">
+  <div class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo"><span class="material-symbols-outlined">inventory</span></div>
+      <h1 class="auth-title">ScanStock</h1>
+      <p class="auth-subtitle">Identifica-te para começar</p>
+
+      <form style="width: 100%;">
+        <div class="auth-field">
+          <label for="input-nome">Nome do Operador</label>
+          <input id="input-nome" type="text" placeholder="Ex: João Silva" required>
+        </div>
+
+        <p class="pin-label">PIN de acesso</p>
+        <div class="pin-wrapper">
+          <input type="password" maxlength="4" class="pin-hidden">
+          <div class="pin-box pin-box--filled">•</div>
+          <div class="pin-box pin-box--filled">•</div>
+          <div class="pin-box pin-box--active"></div>
+          <div class="pin-box"></div>
+        </div>
+
+        <button type="button" class="auth-btn">Entrar no Sistema</button>
+        <button type="button" class="auth-btn-sec">Criar nova conta</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

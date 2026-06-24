@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventário - PizzaStock</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="/estoque/Estoque.css">
+</head>
+<body>
+  <div class="inventario-container">
+    <header>
+      <a href="#"><span class="material-symbols-outlined">add_box</span><span>Adicionar</span></a>
+      <a href="#" class="active"><span class="material-symbols-outlined">inventory_2</span><span>Inventário</span></a>
+      <a href="#"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+      <a href="#"><span class="material-symbols-outlined">account_circle</span><span>Perfil</span></a>
+      <button class="logout"><span class="material-symbols-outlined">logout</span><span>Sair</span></button>
+    </header>
+
+    <main>
+      <div class="inv-top">
+        <h2>Inventário</h2>
+        <button class="btn-refresh"><span class="material-symbols-outlined">refresh</span></button>
+      </div>
+
+      <div class="inv-chips">
+        <button class="inv-chip inv-chip--ativo">Todos (15)</button>
+        <button class="inv-chip">Zerado (1)</button>
+        <button class="inv-chip">Urgente (2)</button>
+        <button class="inv-chip">Atenção (3)</button>
+        <button class="inv-chip">OK (9)</button>
+      </div>
+
+      <div class="inv-categoria">
+        <p class="inv-categoria__titulo">Massas</p>
+        
+        <div class="inv-item">
+          <div class="inv-item__info">
+            <div class="inv-item__nome">Farinha de Trigo</div>
+            <div class="inv-item__detalhe">
+              <span class="inv-badge" style="background: #22c55e22; color: #22c55e; border-color: #22c55e55;">OK</span>
+              <span class="inv-qtd"><strong>50</strong> kg</span>
+            </div>
+            <div class="inv-progress">
+              <div class="inv-progress__bar" style="width: 100%; background: #22c55e;"></div>
+            </div>
+            <div class="inv-progress__labels">
+              <span>0</span>
+              <span>Mín: 20 kg</span>
+            </div>
+          </div>
+          <div class="inv-item__acoes">
+            <button class="inv-btn inv-btn--add"><span class="material-symbols-outlined">add</span></button>
+            <button class="inv-btn inv-btn--rem"><span class="material-symbols-outlined">remove</span></button>
+          </div>
+        </div>
+
+        <div class="inv-item inv-item--pendente">
+          <div class="inv-item__info">
+            <div class="inv-item__nome">Fermento Biológico</div>
+            <div class="inv-item__detalhe">
+              <span class="inv-badge" style="background: #ef444422; color: #ef4444; border-color: #ef444455;">URGENTE</span>
+              <span class="inv-qtd"><strong>1</strong> un <span class="inv-qtd__sync">●</span></span>
+            </div>
+            <div class="inv-progress">
+              <div class="inv-progress__bar" style="width: 20%; background: #ef4444;"></div>
+            </div>
+            <div class="inv-progress__labels">
+              <span>0</span>
+              <span>Mín: 5 un</span>
+            </div>
+          </div>
+          <div class="inv-item__acoes">
+            <button class="inv-btn inv-btn--add"><span class="material-symbols-outlined">add</span></button>
+            <button class="inv-btn inv-btn--rem"><span class="material-symbols-outlined">remove</span></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

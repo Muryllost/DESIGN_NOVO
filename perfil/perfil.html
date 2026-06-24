@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - PizzaStock</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="/perfil/perfil.css">
+</head>
+<body>
+  <div class="perfil-container">
+    <header>
+      <a href="#"><span class="material-symbols-outlined">qr_code_scanner</span><span>Escanear</span></a>
+      <a href="#"><span class="material-symbols-outlined">local_shipping</span><span>Logística</span></a>
+      <a href="#"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+      <a href="#" class="active"><span class="material-symbols-outlined">account_circle</span><span>Perfil</span></a>
+      <button class="logout"><span class="material-symbols-outlined">logout</span><span>Sair</span></button>
+    </header>
+
+    <main class="perfil-main">
+      <form>
+        <div class="perfil-avatar-section">
+          <div class="perfil-avatar">
+            <span class="perfil-avatar__inicial">J</span>
+            <div class="perfil-avatar__overlay"><span class="material-symbols-outlined">photo_camera</span></div>
+          </div>
+          <div class="perfil-foto-actions">
+            <button type="button" class="perfil-foto-btn"><span class="material-symbols-outlined">upload</span>Adicionar foto</button>
+          </div>
+        </div>
+
+        <div class="perfil-card">
+          <div class="perfil-card__title"><span class="material-symbols-outlined">person</span>Informações</div>
+          
+          <div class="perfil-field">
+            <label for="p-nome">Nome</label>
+            <input id="p-nome" type="text" value="João Silva" placeholder="O teu nome ou matrícula" required>
+          </div>
+          
+          <div class="perfil-field">
+            <label for="p-cargo">Cargo na empresa</label>
+            <input id="p-cargo" type="text" value="Gestor de Estoque" placeholder="Ex: Operador de Armazém">
+          </div>
+          
+          <div class="perfil-field">
+            <label>ID do operador</label>
+            <input type="text" value="#402" readonly class="perfil-input--readonly">
+          </div>
+        </div>
+
+        <button type="button" class="perfil-save-btn"><span class="material-symbols-outlined">save</span>Guardar alterações</button>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

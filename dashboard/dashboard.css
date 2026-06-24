@@ -1,0 +1,324 @@
+.dashboard-container {
+  background: #121212;
+  color: #fff;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.dashboard-header {
+  background: #1f1f1f;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #ffca28;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.dashboard-header a,
+.dashboard-header button {
+  color: #888;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s;
+}
+.dashboard-header a .material-symbols-outlined,
+.dashboard-header button .material-symbols-outlined {
+  font-size: 22px;
+}
+.dashboard-header a:hover {
+  color: #fff;
+}
+.dashboard-header a.active {
+  color: #ffca28;
+  border-bottom: 2px solid #ffca28;
+}
+.dashboard-header .logout {
+  color: #ff4c4c;
+}
+.dashboard-header .logout:hover {
+  color: #ff6b6b;
+}
+
+.dashboard-main {
+  padding: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.dashboard-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.dashboard-top h2 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.dashboard-sub {
+  margin: 0;
+  font-size: 13px;
+  color: #aaa;
+  text-transform: capitalize;
+}
+
+.btn-refresh {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: #1f1f1f;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #aaa;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: bold;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+  flex-shrink: 0;
+}
+.btn-refresh:hover:not(:disabled) {
+  color: #ffca28;
+  border-color: #ffca28;
+}
+.btn-refresh:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.refresh-time {
+  font-size: 10px;
+  color: #666;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #aaa;
+  margin: 0 0 10px;
+}
+
+/* ── Métricas ── */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+@media (max-width: 640px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.metric-card {
+  background: #1f1f1f;
+  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid #333;
+  border-top: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.15s;
+}
+.metric-card:hover {
+  transform: translateY(-2px);
+}
+.metric-card__icon .material-symbols-outlined {
+  font-size: 20px;
+}
+.metric-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.metric-card__label {
+  font-size: 10px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+.metric-card__value {
+  font-size: 20px;
+  font-weight: bold;
+}
+.metric-card__sub {
+  font-size: 10px;
+  color: #666;
+}
+
+/* ── Urgência / WhatsApp ── */
+.urgencia-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.urgencia-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  background: #ef4444;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 0 6px;
+  margin-left: 8px;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #22c55e;
+  color: #0a1f0f;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.whatsapp-btn:hover {
+  background: #16a34a;
+  color: #fff;
+}
+.whatsapp-btn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+.urgencia-vazia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 28px 16px;
+  color: #22c55e;
+  border: 1px solid #22c55e33;
+}
+.urgencia-vazia .material-symbols-outlined {
+  font-size: 34px;
+}
+.urgencia-vazia p {
+  margin: 0;
+  font-size: 13px;
+  color: #aaa;
+  text-align: center;
+}
+
+.urgencia-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.urgencia-item {
+  background: #1f1f1f;
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.urgencia-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.urgencia-item__nome {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+.urgencia-item__cat {
+  font-size: 11px;
+  color: #666;
+}
+
+.urgencia-item__direita {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.urgencia-badge {
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 9px;
+  border-radius: 20px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+.urgencia-item__compra {
+  font-size: 12px;
+  color: #ccc;
+}
+.urgencia-item__compra strong {
+  color: #ffca28;
+}
+.urgencia-item__atual {
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+}
+.urgencia-item__atual strong {
+  color: #f59e0b;
+}
+
+/* ── Detalhes atenção ── */
+.atencao-details {
+  margin-top: 14px;
+}
+.atencao-details summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: #f59e0b;
+  font-weight: bold;
+  padding: 10px 14px;
+  background: #1f1f1f;
+  border-radius: 8px;
+  border: 1px solid #f59e0b33;
+  list-style: none;
+}
+.atencao-details summary::-webkit-details-marker {
+  display: none;
+}

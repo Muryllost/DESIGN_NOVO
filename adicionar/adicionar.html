@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar - PizzaStock</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="/adicionar/Adicionar.css">
+</head>
+<body>
+  <div class="adicionar-container">
+    <header>
+      <a href="#" class="active"><span class="material-symbols-outlined">add_box</span><span>Adicionar</span></a>
+      <a href="#"><span class="material-symbols-outlined">inventory_2</span><span>Inventário</span></a>
+      <a href="#"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+      <a href="#"><span class="material-symbols-outlined">admin_panel_settings</span><span>Admin</span></a>
+      <a href="#"><span class="material-symbols-outlined">account_circle</span><span>Perfil</span></a>
+      <button class="logout"><span class="material-symbols-outlined">logout</span><span>Sair</span></button>
+    </header>
+
+    <main>
+      <div class="add-top">
+        <div>
+          <h2>Adicionar ao Estoque</h2>
+          <p class="add-sub">Seleciona o ingrediente recebido do fornecedor</p>
+        </div>
+        <div class="add-avatar add-avatar--initial">J</div>
+      </div>
+
+      <div class="add-search">
+        <span class="material-symbols-outlined">search</span>
+        <input type="text" placeholder="Procurar ingrediente...">
+        <button class="add-search__clear" style="display: none;">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="add-categoria">
+        <p class="add-categoria__titulo">Massas</p>
+        
+        <button class="add-item">
+          <div class="add-item__info">
+            <span class="add-item__nome">Farinha de Trigo</span>
+            <span class="add-item__atual">Stock atual: <strong>45 kg</strong></span>
+          </div>
+          <span class="material-symbols-outlined add-item__chevron">add_circle</span>
+        </button>
+
+        <button class="add-item">
+          <div class="add-item__info">
+            <span class="add-item__nome">Fermento</span>
+            <span class="add-item__atual">Stock atual: <strong>2 un</strong></span>
+          </div>
+          <span class="material-symbols-outlined add-item__chevron">add_circle</span>
+        </button>
+      </div>
+
+      <div class="add-recentes">
+        <p class="add-recentes__label">Adicionados agora</p>
+        
+        <div class="add-recente-item">
+          <span class="material-symbols-outlined add-recente-icon">check_circle</span>
+          <div class="add-recente-info">
+            <span class="add-recente-nome">Queijo Mussarela</span>
+            <span class="add-recente-qtd">+10 kg</span>
+          </div>
+          <span class="add-recente-hora">11:42</span>
+        </div>
+      </div>
+    </main>
+
+    <dialog open class="add-dialog">
+      <form>
+        <h2>➕ Adicionar</h2>
+        <p class="add-dialog__nome">Farinha de Trigo</p>
+        <p class="add-dialog__atual">
+          Stock atual: <strong>45 kg</strong>
+        </p>
+
+        <div class="modal-input-wrapper">
+          <label>Quantidade recebida (kg):</label>
+          <input type="number" min="0.01" step="any" value="5" required>
+        </div>
+
+        <div class="modal-input-wrapper">
+          <label>Observação (opcional):</label>
+          <input type="text" placeholder="Ex: Fornecedor X, lote 23">
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+          <button type="button" class="btn">Confirmar</button>
+          <button type="button" class="btn btn-danger">Cancelar</button>
+        </div>
+      </form>
+    </dialog>
+  </div>
+</body>
+</html>

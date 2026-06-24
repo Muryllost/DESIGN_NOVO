@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - PizzaStock</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="/dashboard/Dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <a href="#"><span class="material-symbols-outlined">add_box</span>Adicionar</a>
+      <a href="#"><span class="material-symbols-outlined">inventory_2</span>Inventário</a>
+      <a href="#" class="active"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+      <a href="#"><span class="material-symbols-outlined">account_circle</span>Perfil</a>
+      <button class="logout"><span class="material-symbols-outlined">logout</span>Sair</button>
+    </header>
+
+    <main class="dashboard-main">
+      <div class="dashboard-top">
+        <div>
+          <h2>Dashboard</h2>
+          <p class="dashboard-sub">Olá, <strong>João Silva</strong> — Terça-feira, 23 de Junho</p>
+        </div>
+        <button class="btn-refresh" title="Atualizar">
+          <span class="material-symbols-outlined">refresh</span>
+          <span class="refresh-time">11:52</span>
+        </button>
+      </div>
+
+      <section>
+        <h3 class="section-title">Visão geral do stock</h3>
+        <div class="metrics-grid">
+          <div class="metric-card" style="border-top-color: #ffca28;">
+            <div class="metric-card__icon" style="color: #ffca28;"><span class="material-symbols-outlined">inventory_2</span></div>
+            <div class="metric-card__body">
+              <span class="metric-card__label">Total</span>
+              <span class="metric-card__value" style="color: #ffca28;">120</span>
+              <span class="metric-card__sub">ingredientes</span>
+            </div>
+          </div>
+          <!-- Mais cards fictícios podem ser adicionados aqui seguindo o mesmo padrão -->
+        </div>
+      </section>
+
+      <section>
+        <div class="urgencia-header">
+          <h3 class="section-title" style="margin: 0;">🛒 Para repor <span class="urgencia-count">2</span></h3>
+          <button class="whatsapp-btn"><span class="material-symbols-outlined">send</span>Enviar lista WhatsApp</button>
+        </div>
+
+        <ul class="urgencia-lista">
+          <li class="urgencia-item" style="border-left: 4px solid #6b7280;">
+            <div class="urgencia-item__info">
+              <span class="urgencia-item__nome">Queijo Mussarela</span>
+              <span class="urgencia-item__cat">Laticínios</span>
+            </div>
+            <div class="urgencia-item__direita">
+              <span class="urgencia-badge" style="background: #6b728022; color: #6b7280; border-color: #6b728055;">ZERADO</span>
+              <span class="urgencia-item__compra">Comprar: <strong>10 kg</strong></span>
+              <span class="urgencia-item__atual">Atual: 0 kg</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

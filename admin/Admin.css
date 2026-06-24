@@ -1,0 +1,233 @@
+.admin-container {
+  background: #121212;
+  color: #fff;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+header {
+  background: #1f1f1f;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #ffca28;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+header a,
+header button.logout {
+  color: #888;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s;
+}
+header a .material-symbols-outlined,
+header button .material-symbols-outlined {
+  font-size: 22px;
+}
+header a:hover {
+  color: #fff;
+}
+header a.active {
+  color: #ffca28;
+  border-bottom: 2px solid #ffca28;
+}
+header button.logout {
+  color: #ff4c4c;
+}
+
+main {
+  padding: 20px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.admin-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.admin-top h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+.admin-sub {
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: #ffca28;
+  color: #3e2723;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn:hover:not(:disabled) {
+  background: #ffb300;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-danger {
+  background: #1f1f1f;
+  color: #ff4c4c;
+  border: 1px solid #ff4c4c44;
+}
+.btn-danger:hover {
+  background: #ff4c4c18;
+}
+
+/* ── Lista ── */
+.admin-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-item {
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0.5px solid #2a2a2a;
+}
+.admin-item__info {
+  flex: 1;
+  min-width: 0;
+}
+.admin-item__nome {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  margin-bottom: 2px;
+}
+.admin-item__cat {
+  font-size: 11px;
+  color: #ffca28;
+  display: block;
+  margin-bottom: 8px;
+}
+.admin-item__meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: #666;
+}
+.admin-item__meta strong {
+  color: #ccc;
+}
+
+.admin-item__acoes {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-acao {
+  background: none;
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+}
+.btn-acao .material-symbols-outlined {
+  font-size: 17px;
+}
+.btn-acao--editar {
+  color: #888;
+}
+.btn-acao--editar:hover {
+  color: #ffca28;
+  border-color: #ffca28;
+}
+.btn-acao--deletar {
+  color: #888;
+}
+.btn-acao--deletar:hover {
+  color: #ff4c4c;
+  border-color: #ff4c4c;
+}
+
+/* ── Modal ── */
+.admin-dialog {
+  margin: auto;
+  padding: 24px;
+  border: 1px solid #ffca28;
+  border-radius: 12px;
+  background: #1f1f1f;
+  color: #fff;
+  width: 380px;
+  max-width: 95%;
+}
+.admin-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+.admin-dialog h2 {
+  margin: 0 0 16px;
+  font-size: 17px;
+}
+
+.modal-input-wrapper {
+  margin: 12px 0;
+  text-align: left;
+}
+.modal-input-wrapper label {
+  display: block;
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.modal-input-wrapper input,
+.modal-input-wrapper select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  font-size: 14px;
+}
+.modal-input-wrapper input:focus,
+.modal-input-wrapper select:focus {
+  border-color: #ffca28;
+}
